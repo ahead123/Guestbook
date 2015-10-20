@@ -1,0 +1,9 @@
+h2 Posts
+
+ul 
+	each post in data
+		li 
+			= post.title
+		p 
+			= post.description
+		a(href="/edit/"+post.id) Edit

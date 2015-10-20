@@ -1,0 +1,15 @@
+{
+  "production": {
+    "use_env_variable": "GB_HOST",
+    "use_env_variable": "GB_UN",
+    "use_env_variable": "GB_PW",
+    "use_env_variable": "GB_HOST"
+  },
+  "devlopment": {
+  	"use_env_variable": "GB_HOST",
+    "use_env_variable": "GB_UN",
+    "use_env_variable": "GB_PW",
+    "use_env_variable": "GB_HOST",
+    "use_env_variable": "GB_URL"
+  }
+}
