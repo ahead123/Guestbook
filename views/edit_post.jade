@@ -1,13 +1,15 @@
 h4 Edit Post
 
-form(action="/edit/:id", method="POST")
-	div(class="form-group")
-		label title
-		input(type="text", name='title')
-	br
-	div(class="form-group")
-		label description
-		input(type="text", name="description")
-	br
-	div(class="form-group")
-		button(type="submit") submit
+	form(action="/edit/"+data.id, method="POST")
+		div(class="form-group")
+			label 
+				= data.title
+			input(type="text", name='title')
+		br
+		div(class="form-group")
+			label 
+				= data.description
+			input(type="text", name="description")
+		br
+		div(class="form-group")
+			button(type="submit") submit

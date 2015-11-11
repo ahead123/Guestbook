@@ -99,11 +99,12 @@ app.get('/edit/:id', function (req, res){
 
 app.post('/edit/:id', function (req, res){
   var id = req.params.id;
+  console.log(id);
   Post.findById(id)
-  .then(function(){
-    Post.updateAttributes({
-      title : req.body.title,
-      description : req.body.description
+  .then(function(data){
+    data.updateAttributes({
+      title: req.body.title,
+      description: req.body.description
     })
   })
   res.redirect("/posts"); 
