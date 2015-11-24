@@ -1,17 +1,17 @@
 include header.jade
-div.container.well
-	h4 Edit Post
-
-		form(action="/edit/"+data.id, method="POST")
-			div(class="form-group")
-				p 
-					= data.title
-				input(type="text", name='title', placeholder='enter new title')
-			br
-			div(class="form-group")
-				p 
-					= data.description
-				input(type="text", name="description", placeholder='enter new description')
-			br
-			div(class="form-group")
-				button(type="submit") save changes
+div.container.jumbotron.text-center
+	h2.text-info Edit GuestBook Entry
+div.container.well.text-center
+	form(action="/edit/"+data.id, method="POST")
+		div.form-group
+			h3.text-danger 
+				= data.title
+			input.text-center(type="text", name='title', placeholder='update name')
+		br
+		div.form-group
+			h3.text-danger 
+				= data.description
+			input.text-center(type="text", name="description", placeholder='update message')
+		br
+		div.form-group
+			button.btn.btn-success(type="submit") Update Entry

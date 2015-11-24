@@ -1,20 +1,26 @@
 include header.jade
-div.container.well.text-center
-	h2 GuestBook
-
+div.jumbotron.text-center 
+	h1 GuestBook
+	div
+		p
+			a(href="/new")
+				button.btn.btn-success New Entry
+div.container.text-center
+	h1 All GuestBook Entries
 	ul.list-unstyled
-		p All Posts
 		each post in data
 
-			li
-				= post.title
-			p 
-				= post.description
+			li.well
+				h4.text-success Name:
+					p.text-info
+						= post.title
+				h4.text-success Message:
+					p.text-info
+						= post.description
 
-			a(href="/edit/"+post.id) 
-				button Edit Post 
-			a(href="/delete/"+post.id) 
-				button Delete Post
+				a(href="/edit/"+post.id) 
+					button.btn.btn-primary Edit Entry 
+				a(href="/delete/"+post.id) 
+					button.btn.btn-danger Delete Entry
 
-	a(href="/new")
-		button New Post
+	
