@@ -1,9 +1,20 @@
-h2 Posts
+include header.jade
+div.container.well.text-center
+	h2 GuestBook
 
-ul 
-	each post in data
-		li 
-			= post.title
-		p 
-			= post.description
-		a(href="/edit/"+post.id) Edit
+	ul.list-unstyled
+		p All Posts
+		each post in data
+
+			li
+				= post.title
+			p 
+				= post.description
+
+			a(href="/edit/"+post.id) 
+				button Edit Post 
+			a(href="/delete/"+post.id) 
+				button Delete Post
+
+	a(href="/new")
+		button New Post

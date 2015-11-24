@@ -69,7 +69,7 @@ app.get('/new', function (req, res){
 
 app.get('/posts', function (req, res){
   sequelize.query("SELECT * FROM posts",{type: sequelize.QueryTypes.SELECT})
-  .then(function(data){
+  .then(function (data){
     console.log(data)
     res.render('view_all_posts', {
       data : data
@@ -89,7 +89,7 @@ app.post('/new', function (req, res){
 app.get('/edit/:id', function (req, res){
   var id = req.params.id;
   Post.findById(id)
-  .then(function(data){
+  .then(function (data){
     console.log(data)
     res.render('edit_post', {
       data : data
@@ -101,14 +101,37 @@ app.post('/edit/:id', function (req, res){
   var id = req.params.id;
   console.log(id);
   Post.findById(id)
-  .then(function(data){
+  .then(function (data){
     data.updateAttributes({
       title: req.body.title,
       description: req.body.description
+    });
+  })
+  .then(function(){
+    res.redirect("/posts"); 
+  });
+});
+
+app.get('/delete/:id', function (req, res){
+  var id = req.params.id;
+  Post.findById(id)
+  .then(function (data){
+    console.log(data)
+    res.render('delete_post', {
+      data : data
     })
   })
-  res.redirect("/posts"); 
-});
+})
+
+app.post('/delete/:id', function (req, res){
+  var id = req.params.id;
+  Post.findById(id)
+  .then(function (data){   
+    data.destroy();
+  }).then(function(){
+    res.redirect("/posts")
+  })
+})
 
 
 app.listen(8000, function(){

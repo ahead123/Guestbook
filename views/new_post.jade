@@ -1,15 +1,17 @@
-h1 Create a new post!
-p just fill out the two step form below to get started!
+include header.jade
+div.container.well.text-center
+	h1 Create a new post!
+	p just fill out the two step form below to get started!
 
-h4 Creating a new post
-form(action="/new", method="POST")
-	div(class="form-group")
-		label title
-		input(type="text", name='title')
-	br
-	div(class="form-group")
-		label description
-		input(type="text", name="description")
-	br
-	div(class="form-group")
-		button(type="submit") submit
+	h4 Creating a new post
+	form(action="/new", method="POST")
+		div(class="form-group")
+			label title
+			input(type="text", name='title')
+		br
+		div(class="form-group")
+			label description
+			input(type="text", name="description")
+		br
+		div(class="form-group")
+			button(type="submit") submit

@@ -1,15 +1,17 @@
-h4 Edit Post
+include header.jade
+div.container.well
+	h4 Edit Post
 
-	form(action="/edit/"+data.id, method="POST")
-		div(class="form-group")
-			label 
-				= data.title
-			input(type="text", name='title')
-		br
-		div(class="form-group")
-			label 
-				= data.description
-			input(type="text", name="description")
-		br
-		div(class="form-group")
-			button(type="submit") submit
+		form(action="/edit/"+data.id, method="POST")
+			div(class="form-group")
+				p 
+					= data.title
+				input(type="text", name='title', placeholder='enter new title')
+			br
+			div(class="form-group")
+				p 
+					= data.description
+				input(type="text", name="description", placeholder='enter new description')
+			br
+			div(class="form-group")
+				button(type="submit") save changes

@@ -1,0 +1,15 @@
+include header.jade
+div.container.well
+	h4 You Are About To Delete This Post!
+
+		form(action="/delete/"+data.id, method="POST").well
+			div(class="form-group")
+				p 
+					= data.title
+			br
+			div(class="form-group")
+				p 
+					= data.description
+			br
+			div(class="form-group")
+				button(id="delete" type="submit") Delete Post
