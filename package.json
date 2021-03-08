@@ -15,7 +15,7 @@
     "jade": "^1.11.0",
     "jade-bootstrap": "^1.0.1",
     "mysql": "^2.9.0",
-    "nodemon": "^1.7.1",
+    "nodemon": "^2.0.0",
     "pg": "^4.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.9.0"
